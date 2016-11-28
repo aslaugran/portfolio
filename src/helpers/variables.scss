@@ -1,0 +1,19 @@
+// Colors
+$white: #fff;
+
+// Font-stack
+$stack-headings: 'Coda', cursive;
+$stack-body-text: 'Buenard', serif;
+
+// Dimentions
+$containerWidth: 1040px;
+.wrap {
+  width: $containerWidth;
+  margin: 0 auto;
+}
+
+$innerContainerWidth: 880px;
+.inner-wrap {
+  width: $innerContainerWidth;
+  margin: 0 auto;
+}

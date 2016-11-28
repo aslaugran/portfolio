@@ -9,7 +9,8 @@ gulp.task('sass', function () {
     gulp.src('src/*.scss')
         // More info at: https://github.com/dlmanning/gulp-sass/tree/v2.1.1
         .pipe(
-            sass({ outputStyle:'expanded' })
+            sass({ outputStyle:'expanded',
+            includePaths: ['node_modules/foundation-sites/scss', "node_modules/foundation-sites/scss/settings"], })
               .on('error', sass.logError)
           )
         // More info at: https://github.com/postcss/autoprefixer/tree/6.3.1
@@ -36,4 +37,3 @@ gulp.task('default', [
     'sass',
     'sass:watch'
   ]);
-
