@@ -17,3 +17,9 @@ $innerContainerWidth: 880px;
   width: $innerContainerWidth;
   margin: 0 auto;
 }
+
+$innerInnerStuff: 700px;
+.inner-inner-wrap {
+  width: $innerInnerStuff;
+  margin: 0 auto;
+}
