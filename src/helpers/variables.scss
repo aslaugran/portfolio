@@ -1,5 +1,6 @@
 // Colors
 $white: #fff;
+$tomato: tomato;
 
 // Font-stack
 $stack-headings: 'Coda', cursive;
@@ -15,11 +16,5 @@ $containerWidth: 1040px;
 $innerContainerWidth: 880px;
 .inner-wrap {
   width: $innerContainerWidth;
-  margin: 0 auto;
-}
-
-$innerInnerStuff: 700px;
-.inner-inner-wrap {
-  width: $innerInnerStuff;
   margin: 0 auto;
 }

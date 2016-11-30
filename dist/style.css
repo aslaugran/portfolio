@@ -9,11 +9,6 @@
   margin: 0 auto;
 }
 
-.inner-inner-wrap {
-  width: 700px;
-  margin: 0 auto;
-}
-
 /* Google Fonts */
 /**
  * Foundation for Sites by ZURB
@@ -21,6 +16,219 @@
  * foundation.zurb.com
  * Licensed under MIT Open Source
  */
-body {
-  background: yellow;
+html {
+  background: url(img/1uxv8fafhvm-luke-chesser.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.top-bar-container {
+  padding-top: 1.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 880px;
+  margin: 0 auto;
+}
+
+.top-bar-container .logo {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  width: 32px;
+  height: 32px;
+}
+
+.top-bar-container .top-nav {
+  padding-left: 0;
+  text-align: right;
+  width: 100%;
+  margin-right: 24px;
+  margin-top: -.4em;
+  visibility: hidden;
+}
+
+.top-bar-container .top-nav li {
+  list-style-type: none;
+}
+
+.top-bar-container .top-nav a {
+  display: block;
+  text-align: right;
+  text-decoration: none;
+  font-family: Coda;
+  font-size: 32px;
+  text-transform: uppercase;
+  color: tomato;
+  width: 100%;
+}
+
+.top-bar-container .top-nav a:hover {
+  text-decoration: underline;
+}
+
+@-webkit-keyframes offset {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes offset {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes fill-it {
+  100% {
+    fill: tomato;
+  }
+}
+
+@keyframes fill-it {
+  100% {
+    fill: tomato;
+  }
+}
+
+@-webkit-keyframes move {
+  100% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    -webkit-transform-origin: left top;
+            transform-origin: left top;
+  }
+}
+
+@keyframes move {
+  100% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    -webkit-transform-origin: left top;
+            transform-origin: left top;
+  }
+}
+
+svg {
+  display: block;
+  margin: 0 auto;
+  width: 40%;
+}
+
+#loader-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+#loader {
+  padding: 1px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding: 1px;
+  stroke: tomato;
+  stroke-width: 2;
+  stroke-dasharray: 674;
+  stroke-dashoffset: 674;
+  -webkit-animation: offset 5s linear forwards, fill-it .8s 5s forwards, move .3s 5s;
+          animation: offset 5s linear forwards, fill-it .8s 5s forwards, move .3s 5s;
+}
+
+.hamburger-menu {
+  width: 32px;
+  cursor: pointer;
+}
+
+.bar,
+.bar:after,
+.bar:before {
+  width: 32px;
+  height: 4px;
+}
+
+.bar {
+  position: relative;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+  background: tomato;
+  -webkit-transition: all 0ms 300ms;
+  transition: all 0ms 300ms;
+}
+
+.bar.animate {
+  background: rgba(255, 99, 71, 0);
+}
+
+.bar:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  background: tomato;
+  -webkit-transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.bar:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  background: tomato;
+  -webkit-transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.bar.animate:after {
+  top: 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.bar.animate:before {
+  bottom: 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+}
+
+.fa-angle-down {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  bottom: 0;
+  color: tomato;
 }

@@ -1,0 +1,12 @@
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.fa-angle-down {
+  align-self: flex-end;
+  bottom: 0;
+  color: $tomato;
+}
