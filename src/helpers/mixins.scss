@@ -1,0 +1,24 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Buenard:400,700|Coda:400,800');
+
+@mixin fonts ($text) {
+
+	@if $text == heading {
+	/* heading text */
+  font-family: 'Coda', cursive;
+  font-weight: 400;
+  font-size: 2em;
+  line-height: 2em;
+  text-transform: uppercase;
+  color: $dark-grey;
+  margin-top: 0;
+	}
+
+  @if $text == body-text {
+  /* heading text */
+  font-family: 'Buenard', serif;
+  font-size: 1em;
+  line-height: 1.2em;
+  color: $dark-grey;
+  }
+}

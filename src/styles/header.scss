@@ -1,87 +1,168 @@
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css?family=Buenard:400,700|Coda:400,800');
 
-@import 'settings';
-@import 'foundation';
 
-html {
-  background: url(img/1uxv8fafhvm-luke-chesser.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+// html {
+//   background: url(img/1uxv8fafhvm-luke-chesser.jpg) no-repeat center center fixed;
+//   -webkit-background-size: cover;
+//   -moz-background-size: cover;
+//   -o-background-size: cover;
+//   background-size: cover;
+// }
 
 // Top Bar
-.top-bar-container,
-.top-nav {
-  // display: flex;
-  // flex-direction: row;
+.main-header,
+.nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  padding-left: .8em;
+  padding-right: .8em;
 }
 
-.top-bar-container {
-  // @include top-bar-container;
+.main-header {
   padding-top: 1.5em;
   display: flex;
   justify-content: space-between;
-  width: $innerContainerWidth;
+  flex-direction: row;
   margin: 0 auto;
 
-  .logo {
-    align-self: flex-start;
-    width: 32px;
-    height: 32px;
-
+  @media (min-width: 1024px) {
+    max-width: $containerWidth;
   }
 
-  .top-nav {
-    padding-left: 0;
-    text-align: right;
+  .logo-group {
+    align-self: flex-start;
+    float: left;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .name {
     width: 100%;
-    margin-right: 24px;
-    margin-top: -.4em;
-    visibility: hidden;
+    font-size: 1em;
+    color: yellow;
+    position: absolute;;
+    text-decoration: none;
+    display: inline;
+    margin-left: .5em;
+    @include fonts (heading);
+    font-size: 1em;
+    padding-top: .7em;
+
+    @media (max-width: 769px) {
+      display: none;
+    }
+  }
+
+
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    // margin-top: -.4em;
+    display: none;
+    position: absolute;
+    margin-left: auto;
+    text-align: right;
+    margin-right: .8em;
 
     li {
       list-style-type: none;
-
+      width: 100%;
     }
 
     a {
       display: block;
-      text-align: right;
       text-decoration: none;
       font-family: Coda;
       font-size: 32px;
       text-transform: uppercase;
       color: tomato;
       width: 100%;
+      padding: .4em;
 
       &:hover {
         text-decoration: underline;
       }
     }
   }
+  
+  .display {
+    display: block;
+  }
+
 }
 
-// .visible {
-//   visibility: visible;
-// }
 
-// Media Queries
+// hamburger-nav
+$bar-width: 32px;
+$bar-height: 4px;
+$bar-spacing: 10px;
 
-// @media (min-width: 769px) {
-//   .top-bar-container {
-//     height: 200px;
-//   }
-//   .logo {
-//     width: 140px;
-//   }
-//   .top-nav {
-//     margin-top: 3em;
-//   }
-//   .top-nav a {
-//     border-bottom-color: transparent;
-//   }
-//
-// }
+.hamburger-menu {
+	// position: absolute;
+  // top: 0;
+  // left: 0;
+  // right: 0;
+  // bottom: 0;
+  // margin: auto;
+  width: $bar-width;
+	// height: $bar-height + $bar-spacing*2;
+	cursor: pointer;
+	position: relative;
+}
+
+.bar,
+.bar:after,
+.bar:before {
+  width: $bar-width;
+	height: $bar-height;
+}
+
+.bar {
+	position: relative;
+	transform: translateY($bar-spacing);
+	background: rgba(255, 99, 71, 1);
+	transition: all 0ms 300ms;
+
+  &.animate {
+    background: rgba(255, 99, 71, 0);
+  }
+}
+
+.bar:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: $bar-spacing;
+	background: rgba(255, 99, 71, 1);
+	transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.bar:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: $bar-spacing;
+	background: rgba(255, 99, 71, 1);
+	transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.bar.animate:after {
+	top: 0;
+	transform: rotate(45deg);
+	transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);;
+}
+
+.bar.animate:before {
+	bottom: 0;
+	transform: rotate(-45deg);
+	transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);;
+}

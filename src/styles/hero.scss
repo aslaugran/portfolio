@@ -1,0 +1,85 @@
+.hero {
+  background: url(img/1uxv8fafhvm-luke-chesser.jpg) no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  margin-bottom: 3rem;
+}
+
+.circle-bg {
+  margin-top: -2rem;
+  text-align: center;
+  opacity: 0.9;
+  border-radius: 50%;
+  height: 12rem;
+  width: 12rem;
+
+  @media only screen and (min-width: 64.063em) {
+    margin: 0 auto;
+    margin-top: 2rem;
+    height: 13rem;
+    width: 13rem;
+  }
+
+  p {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.quote-1 {
+  @extend .circle-bg;
+  background: #333;
+  color: #fff;
+  z-index: 9999999;
+  position: relative;
+  @media only screen and (min-width: 64.063em) {
+    margin-right: 10rem;
+  }
+}
+
+.quote-2 {
+  @extend .circle-bg;
+  background: #F2F1EF;
+  p {
+    padding: 2rem;
+  }
+}
+
+
+// Scroll arrow
+
+.bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100vh;
+}
+
+.fa-angle-down {
+  align-self: flex-end;
+  color: $tomato;
+}
+
+
+@keyframes offset {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+	40% {
+    transform: translateY(-30px);
+  }
+	60% {
+    transform: translateY(-15px);
+  }
+}
+
+.bounce {
+  animation: bounce 2s infinite;
+}
