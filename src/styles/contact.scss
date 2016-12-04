@@ -1,0 +1,146 @@
+.content-container {
+  text-align: center;
+  // padding-top: 15vh;
+}
+
+.inner-content-container {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-between;
+  justify-content: center;
+
+}
+.content-container > * {
+  // padding: 10px;
+  // flex: 1 100%;
+}
+
+.center-heading {
+  width: 100%;
+}
+
+.social {
+  text-align: center;
+  // padding: 0 2em;
+  text-align: right;
+  align-self: center;
+
+  padding: .8em;
+  color: $dark-grey;
+
+  &:hover {
+    color: $tomato;
+  }
+}
+
+
+// Contct button
+
+
+//HOVER TRANSITION
+$hover: all 0.2s ease-in;
+$slide:all, 0.4s 0.1s, cubic-bezier(0.55,0,0.1,1);
+
+//ANIMATION
+$animation-time: 0.3s;
+$slide:all, $animation-time, cubic-bezier(0.55,0,0.1,1);
+$slide-delay: all, $animation-time $animation-time, cubic-bezier(0.55,0,0.1,1);
+
+.button {
+  text-decoration: none;
+  color: $dark-grey;
+  @include fonts (heading);
+  display: inline-block;
+  padding: 15px 50px;
+  margin: 2em;
+  position: relative;
+  -webkit-box-shadow:inset 0px 0px 0px 2px $light-grey;
+    -moz-box-shadow:inset 0px 0px 0px 2px $light-grey;;
+    box-shadow:inset 0px 0px 0px 2px10px $light-grey;
+  transition: $hover;
+
+  $yellow: $tomato;
+
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    display: block;
+    background-color: $yellow;
+    transition: $slide-delay;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    display: block;
+    background-color: $tomato;
+    transition: $slide;
+  }
+
+  &:hover {
+    color: $tomato;
+
+    &:before {
+      width: 100%;
+      transition: $slide;
+    }
+
+    &:after {
+      width: 100%;
+      transition: $slide-delay;
+    }
+
+    i {
+      &:before {
+        height: 100%;
+        transition: $slide;
+      }
+
+      &:after {
+        height: 100%;
+        transition: $slide-delay;
+      }
+    }
+  }
+
+  i {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 0;
+      width: 2px;
+      display: block;
+      background-color: $tomato;
+      transition: $slide-delay;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 0;
+      width: 2px;
+      display: block;
+      background-color: $tomato;
+      transition: $slide;
+    }
+  }
+}

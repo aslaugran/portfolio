@@ -56,6 +56,14 @@ section.shade.col-md-5 {
   padding-left: 0;
 }
 
+.header-bg {
+  position: fixed;
+  height: 80px;
+  width: 100%;
+  background: #fff;
+  display: none;
+}
+
 .main-header,
 .nav {
   position: fixed;
@@ -291,13 +299,10 @@ section.shade.col-md-5 {
   }
 }
 
-svg {
-  display: block;
-  margin: 0 auto;
-  width: 40%;
-}
-
-#loader-wrapper {
+#overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -307,7 +312,28 @@ svg {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 100%;
+  background: #fff;
+  z-index: 9999;
+  border: 7px solid red;
+}
+
+svg {
+  display: block;
+  margin: 0 auto;
+  width: 40%;
+}
+
+.loader-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 1px solid blue;
 }
 
 #loader {
@@ -328,10 +354,9 @@ svg {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -webkit-box-flex: column;
+      -ms-flex: column wrap;
+          flex: column wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -346,15 +371,25 @@ svg {
 }
 
 .case-study-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: row;
+      -ms-flex: row wrap;
+          flex: row wrap;
   width: 45%;
   padding-left: 2em;
   border: 1px solid blue;
 }
 
-.case-study-1 {
-  width: 200px;
-  height: 300px;
-  background: blue;
+.case-study-right img {
+  width: 400px;
+}
+
+.case-study-1,
+.case-study-2,
+.case-study-3 {
+  width: 100%;
 }
 
 .hero {
@@ -468,4 +503,168 @@ svg {
 .bounce {
   -webkit-animation: bounce 2s infinite;
           animation: bounce 2s infinite;
+}
+
+.content-container {
+  text-align: center;
+}
+
+.inner-content-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.center-heading {
+  width: 100%;
+}
+
+.social {
+  text-align: center;
+  text-align: right;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding: .8em;
+  color: #4A4A4A;
+}
+
+.social:hover {
+  color: tomato;
+}
+
+.button {
+  text-decoration: none;
+  color: #4A4A4A;
+  /* heading text */
+  font-family: 'Coda', cursive;
+  font-weight: 400;
+  font-size: 2em;
+  line-height: 2em;
+  text-transform: uppercase;
+  color: #4A4A4A;
+  margin-top: 0;
+  display: inline-block;
+  padding: 15px 50px;
+  margin: 2em;
+  position: relative;
+  box-shadow: inset 0px 0px 0px 2px10px #ccc;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.button:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  display: block;
+  background-color: tomato;
+  -webkit-transition: all, 0.3s 0.3s, cubic-bezier(0.55, 0, 0.1, 1);
+  transition: all, 0.3s 0.3s, cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.button:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  display: block;
+  background-color: tomato;
+  -webkit-transition: all, 0.3s, cubic-bezier(0.55, 0, 0.1, 1);
+  transition: all, 0.3s, cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.button:hover {
+  color: tomato;
+}
+
+.button:hover:before {
+  width: 100%;
+  -webkit-transition: all, 0.3s, cubic-bezier(0.55, 0, 0.1, 1);
+  transition: all, 0.3s, cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.button:hover:after {
+  width: 100%;
+  -webkit-transition: all, 0.3s 0.3s, cubic-bezier(0.55, 0, 0.1, 1);
+  transition: all, 0.3s 0.3s, cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.button:hover i:before {
+  height: 100%;
+  -webkit-transition: all, 0.3s, cubic-bezier(0.55, 0, 0.1, 1);
+  transition: all, 0.3s, cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.button:hover i:after {
+  height: 100%;
+  -webkit-transition: all, 0.3s 0.3s, cubic-bezier(0.55, 0, 0.1, 1);
+  transition: all, 0.3s 0.3s, cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.button i {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.button i:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0;
+  width: 2px;
+  display: block;
+  background-color: tomato;
+  -webkit-transition: all, 0.3s 0.3s, cubic-bezier(0.55, 0, 0.1, 1);
+  transition: all, 0.3s 0.3s, cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.button i:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 0;
+  width: 2px;
+  display: block;
+  background-color: tomato;
+  -webkit-transition: all, 0.3s, cubic-bezier(0.55, 0, 0.1, 1);
+  transition: all, 0.3s, cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.glimps-image {
+  width: 300px;
+  height: 200px;
+  background: #4A4A4A;
+  border: 2px solid #fff;
+}
+
+.content-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  border: 1px solid red;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  text-align: left;
 }

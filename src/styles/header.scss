@@ -9,6 +9,16 @@
 // }
 
 // Top Bar
+
+.header-bg {
+  position: fixed;
+  height: 80px;
+  width: 100%;
+  background: $white;
+  display: none;
+}
+
+
 .main-header,
 .nav {
   position: fixed;
@@ -93,7 +103,7 @@
       }
     }
   }
-  
+
   .display {
     display: block;
   }
