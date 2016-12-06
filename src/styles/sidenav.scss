@@ -1,0 +1,28 @@
+.sidebar {
+  cursor: pointer;
+
+  li {
+    list-style-type: none;
+    text-decoration: none;
+  }
+}
+
+.chapter-name {
+  font-size: 1em;
+  line-height: 4em;
+
+  &:hover {
+    font-size: 2em;
+    line-height: 4em;
+    font-color: $tomato;
+  }
+
+  &:active {
+    font-size: 1em;
+    font-color: $tomato;
+  }
+}
+
+.content-heading {
+  @include fonts(heading);
+}

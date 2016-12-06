@@ -28,35 +28,32 @@ $(document).ready(function() {
 		 	$('.header-bg').fadeOut();
 		}
 
-		// Left sidebar scroll and then fixed
-		// if ( $(this).scrollTop() >= $(window).height() ){
-		// menu.removeClass('case-study-1').addClass('fixed-sidebar');
-		// } else {
-		// menu.removeClass('fixed-sidebar').addClass('case-study-1');
-		// }
-
 	});
 
-
+	// Sticky-kit
+	$(function() {
+	  $(".sidebar").stick_in_parent({
+	    offset_top: 80
+	  });
+	});
 
 	// Left nav scroll to content
-
 	$("#chapter-1-button").click(function() {
-		$('html, body').animate({
-				scrollTop: $("#chapter-1").offset().top
-		}, 2000);
+	    $('html,body').animate({
+	        scrollTop: $(".case-study-1").offset().top
+			}, 'slow');
 	});
 
 	$("#chapter-2-button").click(function() {
-		$('html, body').animate({
-				scrollTop: $("#chapter-2").offset().top
-		}, 2000);
+	    $('html,body').animate({
+	        scrollTop: $(".case-study-2").offset().top
+			}, 'slow');
 	});
 
 	$("#chapter-3-button").click(function() {
-    $('html, body').animate({
-        scrollTop: $("#chapter-3").offset().top
-    }, 2000);
+	    $('html,body').animate({
+	        scrollTop: $(".case-study-3").offset().top
+			}, 'slow');
 	});
 
 });

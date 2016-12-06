@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
+var compass = require('compass');
 
 
 gulp.task('sass', function () {
@@ -37,3 +38,14 @@ gulp.task('default', [
     'sass',
     'sass:watch'
   ]);
+
+
+// compiles in process.cwd()
+compass.compile(function(err, stdout, stderr) {
+   console.log('done');
+});
+
+// compiles in the given directory
+compass.compile({ cwd: __dirname + 'public' }, function(err, stdout, stderr) {
+   console.log('done');
+});

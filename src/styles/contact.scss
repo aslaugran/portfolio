@@ -1,36 +1,53 @@
-.content-container {
-  text-align: center;
-  // padding-top: 15vh;
-}
+// .content-container {
+//   text-align: center;
+//   // padding-top: 15vh;
+// }
 
-.inner-content-container {
+.social-container {
   display: flex;
   flex-flow: row wrap;
   align-content: space-between;
   justify-content: center;
 
+  .social {
+    text-align: center;
+    // padding: 0 2em;
+    text-align: right;
+    align-self: center;
+
+    padding: .8em;
+    color: $dark-grey;
+
+    &:hover {
+      color: $tomato;
+    }
+
 }
-.content-container > * {
-  // padding: 10px;
-  // flex: 1 100%;
-}
+// .social-container > * {
+//   // padding: 10px;
+//   // flex: 1 100%;
+//
+//
+// }
+
 
 .center-heading {
   width: 100%;
 }
 
-.social {
-  text-align: center;
-  // padding: 0 2em;
-  text-align: right;
-  align-self: center;
 
-  padding: .8em;
-  color: $dark-grey;
 
-  &:hover {
-    color: $tomato;
-  }
+}
+
+// Footer
+
+.footer {
+  height: 100vh;
+  background: $white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 
 
@@ -46,10 +63,23 @@ $animation-time: 0.3s;
 $slide:all, $animation-time, cubic-bezier(0.55,0,0.1,1);
 $slide-delay: all, $animation-time $animation-time, cubic-bezier(0.55,0,0.1,1);
 
+@keyframes pulse {
+    50% { transform: scale(1.2); }
+}
+
 .button {
   text-decoration: none;
   color: $dark-grey;
   @include fonts (heading);
+  font-size: 1.2em;
+
+  animation: pulse 1s ease-out infinite;
+
+  a {
+    text-decoration: none;
+    color: $tomato;
+  }
+
   display: inline-block;
   padding: 15px 50px;
   margin: 2em;
