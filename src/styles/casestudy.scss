@@ -2,12 +2,15 @@
   display: flex;
   justify-content: center;
   height: 100%;
-  padding-top: 15vh;
   margin-bottom: 100px;
 }
 
 .case-study-left {
   width: 30%;
+
+  @media (max-width: 769px) {
+    display: none;
+  }
 }
 
 .case-study-right {
@@ -17,6 +20,10 @@
   align-items: center;
   width: 70%;
   padding-left: 2em;
+
+  @media (max-width: 769px) {
+    width: 100%;
+  }
 
   .case-study-1,
   .case-study-2,
@@ -29,6 +36,10 @@
     .case-study-2-3,
     .case-study-2-7 {
       align-self: center;
+
+      @media (max-width: 769px) {
+        width: 100%;
+      }
     }
   }
 

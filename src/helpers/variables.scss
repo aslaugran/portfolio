@@ -12,7 +12,8 @@ $stack-body-text: 'Buenard', serif;
 // Dimentions
 $containerWidth: 1040px;
 .wrap {
-  width: $containerWidth;
+  max-width: $containerWidth;
+  width: 100%;
   margin: 0 auto;
 }
 

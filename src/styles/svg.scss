@@ -31,40 +31,31 @@
   // bottom: 0;
   background: $white;
   z-index: 9999;
-  border: 7px solid red;
 }
 
 
 
 // TeamTreehouse
-svg {
-  display: block;
-  margin: 0 auto;
-  width: 40%;
-}
 
 .loader-wrapper {
+  display: block;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid blue;
+  padding: 20px;
 
+  #loader {
+    align-self: center;
+    stroke: $tomato;
+    stroke-width: 1;
+    stroke-dasharray: 568;
+    stroke-dashoffset: 568;
+
+    animation: offset 5s linear forwards, fill-it 1.2s 5s forwards;
+  }
 
 }
-
-#loader {
-  padding: 1px;
-  align-self: center;
-
-  padding: 1px;
-  stroke: $tomato;
-  stroke-width: 2;
-  stroke-dasharray: 600;
-  stroke-dashoffset: 600;
-
-  animation: offset 5s linear forwards, fill-it .8s 5s forwards, move .3s 5s;
-}
-
 
 
 // #loader {

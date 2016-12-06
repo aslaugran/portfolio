@@ -1,61 +1,19 @@
-// .content-container {
-//   text-align: center;
-//   // padding-top: 15vh;
-// }
-
-.social-container {
-  display: flex;
-  flex-flow: row wrap;
-  align-content: space-between;
-  justify-content: center;
-
-  .social {
-    text-align: center;
-    // padding: 0 2em;
-    text-align: right;
-    align-self: center;
-
-    padding: .8em;
-    color: $dark-grey;
-
-    &:hover {
-      color: $tomato;
-    }
-
-}
-// .social-container > * {
-//   // padding: 10px;
-//   // flex: 1 100%;
-//
-//
-// }
-
-
 .center-heading {
   width: 100%;
 }
 
-
-
-}
-
 // Footer
-
 .footer {
   height: 100vh;
   background: $white;
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
-
 // Contct button
-
-
 //HOVER TRANSITION
-$hover: all 0.2s ease-in;
+$hover:all 0.2s ease-in;
 $slide:all, 0.4s 0.1s, cubic-bezier(0.55,0,0.1,1);
 
 //ANIMATION
@@ -63,8 +21,10 @@ $animation-time: 0.3s;
 $slide:all, $animation-time, cubic-bezier(0.55,0,0.1,1);
 $slide-delay: all, $animation-time $animation-time, cubic-bezier(0.55,0,0.1,1);
 
-@keyframes pulse {
-    50% { transform: scale(1.2); }
+@keyframes scale {
+	50% {
+    transform: scale(1.2);
+  }
 }
 
 .button {
@@ -73,7 +33,7 @@ $slide-delay: all, $animation-time $animation-time, cubic-bezier(0.55,0,0.1,1);
   @include fonts (heading);
   font-size: 1.2em;
 
-  animation: pulse 1s ease-out infinite;
+  animation: scale 4s ease-in-out infinite;
 
   a {
     text-decoration: none;
@@ -173,4 +133,33 @@ $slide-delay: all, $animation-time $animation-time, cubic-bezier(0.55,0,0.1,1);
       transition: $slide;
     }
   }
+}
+
+// Social icon
+.social-container {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-between;
+  justify-content: center;
+
+  .social {
+    text-align: center;
+    // padding: 0 2em;
+    text-align: right;
+    align-self: center;
+    display: inline-block;
+
+    padding: .8em;
+    color: $dark-grey;
+
+    &:hover {
+      color: $tomato;
+    }
+  }
+}
+
+#chapter-1,
+#chapter-2,
+#chapter-3 {
+  padding-top: 100px;
 }

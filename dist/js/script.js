@@ -1,16 +1,17 @@
 $(document).ready(function() {
 
 	// To delay page load with PreLoader
-	// setTimeout(function(){
-	// 	$('#loader').fadeOut('slow', function() {
-	// 	$('#overlay').fadeOut('slow');
-	// }, 3000);
+	setTimeout(function(){
+		$('#loader').fadeOut('slow', function() {
+		$('#overlay').fadeOut('slow');
+	});
+}, 5000);
 
 	// toggle hamburger menu
-	$('.hamburger-menu').click(function() {
-		$('.bar').toggleClass('animate');
-		$('.nav').toggleClass( 'display' );
-	});
+	// $('.hamburger-menu').click(function() {
+	// 	$('.bar').toggleClass('animate');
+	// 	$('.nav').toggleClass( 'display' );
+	// });
 
 	// Hide div on Scroll
 	$(window).scroll(function() {
@@ -22,7 +23,7 @@ $(document).ready(function() {
 		}
 
 		// Nav background turns white on scroll
-		if ($(this).scrollTop()>400) {
+		if ($(this).scrollTop()>480) {
 			$('.header-bg').fadeIn();
 		} else {
 		 	$('.header-bg').fadeOut();

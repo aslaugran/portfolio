@@ -1,15 +1,4 @@
-
-
-// html {
-//   background: url(img/1uxv8fafhvm-luke-chesser.jpg) no-repeat center center fixed;
-//   -webkit-background-size: cover;
-//   -moz-background-size: cover;
-//   -o-background-size: cover;
-//   background-size: cover;
-// }
-
 // Top Bar
-
 .header-bg {
   position: fixed;
   height: 80px;
@@ -17,7 +6,6 @@
   background: $white;
   display: none;
 }
-
 
 .main-header,
 .nav {
@@ -36,6 +24,8 @@
   justify-content: space-between;
   flex-direction: row;
   margin: 0 auto;
+  position: fixed;
+  z-index: 9999 !important;
 
   @media (min-width: 1024px) {
     max-width: $containerWidth;
@@ -54,23 +44,21 @@
   }
 
   .name {
-    width: 100%;
     font-size: 1em;
     color: yellow;
-    position: absolute;;
+    position: absolute;
     text-decoration: none;
     display: inline;
     margin-left: .5em;
     @include fonts (heading);
     font-size: 1em;
     padding-top: .7em;
+    display: inline-block;
 
     @media (max-width: 769px) {
       display: none;
     }
   }
-
-
 
   // .nav {
   //   display: flex;
@@ -103,11 +91,6 @@
   //     }
   //   }
   // }
-
-  .display {
-    display: block;
-  }
-
 }
 
 

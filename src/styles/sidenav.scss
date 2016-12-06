@@ -1,25 +1,30 @@
 .sidebar {
   cursor: pointer;
+  z-index: 999;
 
   li {
     list-style-type: none;
     text-decoration: none;
+    line-height: 2em;
   }
 }
 
 .chapter-name {
   font-size: 1em;
   line-height: 4em;
+  color: $dark-grey;
 
-  &:hover {
-    font-size: 2em;
-    line-height: 4em;
-    font-color: $tomato;
-  }
+  transition: all .2s ease-in-out;
+  transform-origin: center left;
 
   &:active {
-    font-size: 1em;
-    font-color: $tomato;
+    color: $tomato;
+    transform: scale(2);
+  }
+
+  &:hover {
+    color: $tomato;
+    transform: scale(2);
   }
 }
 
